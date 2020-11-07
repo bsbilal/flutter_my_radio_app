@@ -111,6 +111,7 @@ child: _actionButtons(),
               child: playIcon(),
 
             ),
+            Expanded(child:shuffleButton(),),
             Expanded(child:GestureDetector(onTap:stopPressed,child: Icon(Icons.stop,size: MediaQuery.of(context).size.height/10)))
           ],
 
@@ -126,8 +127,6 @@ child: _actionButtons(),
 
     if (isPlaying)
       return GestureDetector(onTap:pausePressed ,child:Icon(Icons.pause,size: MediaQuery.of(context).size.height/10));
-    else if(playingStreamUrl.isEmpty)
-      return GestureDetector(onTap:shufflePressed,child: Icon(Icons.shuffle,size: MediaQuery.of(context).size.height/10));
     else
       return GestureDetector(onTap:playPressed,child: Icon(Icons.play_arrow,size: MediaQuery.of(context).size.height/10));
 
@@ -190,9 +189,19 @@ stationSelected(radioList[index]["title"], radioList[index]["stream_path"]);
 
   Future<void> playPressed() async {
     isPlaying = true;
-    await FlutterRadio.play(url: playingStreamUrl);
+
+    if(playingStreamUrl=="")
+      shufflePressed();
+    else
+        await FlutterRadio.play(url: playingStreamUrl);
     setState(() {
 
     });
+  }
+
+  Widget shuffleButton() {
+    return GestureDetector(onTap:shufflePressed,child: Icon(Icons.shuffle,size: MediaQuery.of(context).size.height/10));
+
+
   }
 }
