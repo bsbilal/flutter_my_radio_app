@@ -33,7 +33,6 @@ class _radioMainState extends State<radioMain> {
 
     if (response.statusCode == 200) {
       List radios = json.decode(response.body);
-      print(radios);
       return radios.map((radio) => new radioItem.fromJson(radio)).toList();
     } else
       throw Exception('Failed to read');
@@ -46,7 +45,6 @@ class _radioMainState extends State<radioMain> {
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               List<radioItem> radioItems = snapshot.data;
-              print(radioItems);
               return new ListView(
                   children: radioItems
                       .map((radioItem) => _listItem(radioItem))
