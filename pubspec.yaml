@@ -30,7 +30,7 @@ dependencies:
   cupertino_icons: ^0.1.3
   http: any
   screen: 0.0.5
-
+  flutter_radio: 0.1.8
 dev_dependencies:
   flutter_test:
     sdk: flutter

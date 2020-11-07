@@ -1,7 +1,8 @@
 import 'dart:convert';
-
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_my_radio_app/radioItem.dart';
+import 'package:flutter_radio/flutter_radio.dart';
 import 'package:http/http.dart' as http;
 
 class radioMain extends StatefulWidget {
@@ -10,12 +11,14 @@ class radioMain extends StatefulWidget {
 }
 
 class _radioMainState extends State<radioMain> {
+
+  bool isPlaying=false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
           title: Text(
-        "Radyo Seçim Ekranı",
+        "Radyo Uygulamam",
       )),
       body: menuBody(),
     );
@@ -39,25 +42,42 @@ class _radioMainState extends State<radioMain> {
   }
 
   Widget _menuItems() {
-    return Center(
-      child: FutureBuilder<List<radioItem>>(
-          future: _fetchStations(),
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              List<radioItem> radioItems = snapshot.data;
-              return new ListView(
-                  children: radioItems
-                      .map((radioItem) => _listItem(radioItem))
-                      .toList());
-            } else if (snapshot.hasError) {
-              print(snapshot.error.toString());
+    return
+      Column(
 
-              return Center(child: Text('Radyo bulunamadı.'));
-            }
-            //return Text('${snapshot.error}');
-            return CircularProgressIndicator();
-          }),
-    );
+        children: <Widget>[Expanded(
+child:    Center(
+  child: FutureBuilder<List<radioItem>>(
+      future: _fetchStations(),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          List<radioItem> radioItems = snapshot.data;
+          return new ListView(
+              children: radioItems
+                  .map((radioItem) => _listItem(radioItem))
+                  .toList());
+        } else if (snapshot.hasError) {
+          print(snapshot.error.toString());
+
+          return Center(child: Text('Radyo bulunamadı.'));
+        }
+        //return Text('${snapshot.error}');
+        return CircularProgressIndicator();
+      }),
+),
+flex: 5,
+        ),
+          Expanded(
+            flex: 1,
+child: _actionButtons(),
+          )
+
+
+        ],
+
+      );
+
+
   }
 
   Card _listItem(radioItem item) {
@@ -71,9 +91,63 @@ class _radioMainState extends State<radioMain> {
         ),
       ),
       subtitle: Text('${item.kategori}', style: TextStyle(color: Colors.blue)),
-      onTap: () {
-        print("${item.stream_path} ");
-      },
+      onTap: (){stationSelected(item.title,item.stream_path);},
     ));
+  }
+
+  Widget _actionButtons() {
+    return Container(
+      color: Colors.redAccent,
+      child: Column(
+        children: <Widget>[
+          Container(margin: EdgeInsets.only(top: 10),child: Text("dfdsf",style: TextStyle(color: Colors.white),),),
+          Row(children: <Widget>[
+            Expanded(
+              child: GestureDetector(child:playIcon()),
+
+            ),
+            Expanded(child:GestureDetector(child: Icon(Icons.stop,size: MediaQuery.of(context).size.height/10)))
+          ],
+
+          )
+        ],
+
+
+      ),
+    );
+  }
+
+  Icon playIcon(){
+    if (isPlaying)
+      return Icon(Icons.pause,size: MediaQuery.of(context).size.height/10);
+    else
+      return Icon(Icons.shuffle,size: MediaQuery.of(context).size.height/10);
+  }
+
+  Future<void> stationSelected(String _title,String _streamUrl) async {
+    isPlaying=true;
+    FlutterRadio.playOrPause(url: _streamUrl);
+    playingStatus();
+    setState(() {
+
+    });
+  }
+
+  Future playingStatus() async {
+    bool isP = await FlutterRadio.isPlaying();
+    setState(() {
+      isPlaying = isP;
+    });
+  }
+  Future<void> audioStart() async {
+    await FlutterRadio.audioStart();
+    print('Audio Start OK');
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    audioStart();
+    playingStatus();
   }
 }
