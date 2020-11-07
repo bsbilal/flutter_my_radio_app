@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:async';
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_my_radio_app/radioItem.dart';
 import 'package:flutter_radio/flutter_radio.dart';
@@ -15,6 +16,7 @@ class _radioMainState extends State<radioMain> {
   bool isPlaying=false;
   String playingStream="";
   String playingStreamUrl="";
+  List radioList=[];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,6 +40,7 @@ class _radioMainState extends State<radioMain> {
 
     if (response.statusCode == 200) {
       List radios = json.decode(response.body);
+      radioList=radios;
       return radios.map((radio) => new radioItem.fromJson(radio)).toList();
     } else
       throw Exception('Failed to read');
@@ -159,8 +162,10 @@ child: _actionButtons(),
 
   void shufflePressed()
   async {
+    Random random=new Random();
+    int index=random.nextInt(radioList.length);
 
-
+stationSelected(radioList[index]["title"], radioList[index]["stream_path"]);
   }
   Future<void> stopPressed() {
     isPlaying = false;
