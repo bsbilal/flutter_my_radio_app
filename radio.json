@@ -1,0 +1,185 @@
+[{
+ "lang":"UK",
+ "title":"Kiss FM UK",
+ "stream_path":"https://stream-kiss.planetradio.co.uk/kissnational.aac?direct=true&listenerid=undefined&aw_0_1st.bauer_listenerid=undefined&amsparams=playerid:BMUK_html5;skey:1604744566;&aw_0_1st.playerid=BMUK_html5&aw_0_1st.skey=1604744566&aw_0_1st.bauer_loggedin=false&awparams=loggedin:false;&aw_0_req.userConsentV2=CO8gJLeO8gJLeAGABBENA_CgAAAAAH_AACaIAAAN0AIMBAUAAAEEAAAIACIQAAQAiQAAAABBAABQJIAEqgACVwEVgIAACAxAQgAAgAAQgQCAAAAAIIAgBACwQCAAiAQAAgAEAAAAEIAIDACQEAAAEAJCAAiACECAgiAAg5CAgIACCAFABAAAuJDACAEooAJQACABcAAA.YAAAAAAAAAAA",
+ "kategori":"Karışık"
+},
+{
+ "lang":"ES",
+ "title":"Blue Marlin Ibiza",
+ "stream_path":"http://ice1.viastreaming.net:8635/live",
+ "kategori":"Dance Lounge"
+},
+{
+ "lang":"US",
+ "title":"Nexus Radio",
+ "stream_path":"stream1.nexusradio.fm/nexusdance.mp3",
+ "kategori":"Karışık çalıyo"
+},{
+ "lang":"UA",
+ "title":"Nashe Radio",
+ "stream_path":"http://online.nasheradio.ua/NasheRadio_HD",
+ "kategori":"Ukraynaca ve ingilizce karışık."
+},
+{
+ "lang":"UA",
+ "title":"Maximum Radio",
+ "stream_path":"http://icecast.luxnet.ua/maximum_mp3",
+ "kategori":"Ukraynaca ingilizce."
+},
+{
+ "lang":"UA",
+ "title":"Lux Fm",
+ "stream_path":"http://icecast.luxnet.ua/lux_mp3",
+ "kategori":"Dance"
+}
+
+,{
+ "lang":"UA",
+ "title":"Hit Fm UA",
+ "stream_path":"http://online.hitfm.ua/HitFM_HD",
+ "kategori":"Çoğunlukla ukraynaca iyi radyo."
+},
+{
+ "lang":"UA",
+ "title":"Kiss Fm Ukraine",
+ "stream_path":"http://online.kissfm.ua/KissFM_HD",
+ "kategori":"Dance"
+},
+{
+ "lang":"UA",
+ "title":"Power X",
+ "stream_path":"https://cast.fex.net/power_x",
+ "kategori":"Dance Mix"
+},
+{
+ "lang":"UA",
+ "title":"DJ Fm",
+ "stream_path":"https://cast.fex.net/djfm_x",
+ "kategori":"Dance"
+}
+,
+{
+ "lang":"UA",
+ "title":"Avto Radio 320kb",
+ "stream_path":"https://cast.radiogroup.com.ua/avtoradio320",
+ "kategori":"Dance"
+}
+,
+{
+ "lang":"UA",
+ "title":"Lux Fm Lviv 320",
+ "stream_path":"http://icecast.luxnet.ua/luxlviv_mp3_320",
+ "kategori":"Dance"
+}
+,
+{
+ "lang":"UA",
+ "title":"İyi Müzik",
+ "stream_path":"https://online.1043.com.ua/hq",
+ "kategori":"Mix"
+},
+{
+ "lang":"UA",
+ "title":"Kiss Fm Black",
+ "stream_path":"http://online.kissfm.ua/KissFM_Black_HD",
+ "kategori":"Dance rb"
+},
+{
+ "lang":"TR",
+ "title":"Power Fm TR",
+ "stream_path":"https://listen.powerapp.com.tr/powerturk/mpeg/icecast.audio?/;stream.mp3",
+ "kategori":"Tr pop"
+},
+{
+ "lang":"TR",
+ "title":"Power Fm",
+ "stream_path":"https://listen.powerapp.com.tr/powerfm/mpeg/icecast.audio",
+ "kategori":"Dance"
+},
+{
+ "lang":"?",
+ "title":"Fitness Radio ",
+ "stream_path":"http://185.52.127.159/de/33047/mp3_128.mp3",
+ "kategori":"Move"
+},
+{
+ "lang":"DE",
+ "title":"Energy home office",
+ "stream_path":"https://scdn.nrjaudio.fm/de/33057/mp3_128.mp3?origine=radio.net&cdn_path=adswizz_lbs7&adws_out_a2",
+ "kategori":"Karışık"
+},
+{
+ "lang":"DE",
+ "title":"Energy clubbin",
+ "stream_path":"https://scdn.nrjaudio.fm/de/33023/mp3_128.mp3?origine=radio.net&cdn_path=adswizz_lbs8&adws_out_b2",
+ "kategori":"Dance"
+},
+{
+ "lang":"DE",
+ "title":"RauteMusik Workout",
+ "stream_path":"http://rautemusik-de-hz-fal-stream18.radiohost.de/workout?ref=my-radioscom",
+ "kategori":"Workout"
+},
+{
+ "lang":"DE",
+ "title":"ANTENNE BAYERN Workout Hits",
+ "stream_path":"http://s1-webradio.antenne.de/workout-hits",
+ "kategori":"Workout"
+},
+{
+ "lang":"UK",
+ "title":"Capital Manchester",
+ "stream_path":"http://media-ice.musicradio.com/CapitalManchesterMP3",
+ "kategori":"Talk - Music"
+},
+{
+ "lang":"RU",
+ "title":"Radio DFM",
+ "stream_path":"https://dfm.hostingradio.ru/dfm96.aacp",
+ "kategori":"Mix"
+},
+{
+ "lang":"RU",
+ "title":"Svoe FM",
+ "stream_path":"http://r51-15-220-209.relay.radiotoolkit.com:30000/svoefm",
+ "kategori":"Music Russian"
+},
+{
+ "lang":"RU",
+ "title":"Radio Record",
+ "stream_path":"https://air2.radiorecord.ru:9003/rr_320",
+ "kategori":"Russiaan Music"
+},
+{
+ "lang":"RU",
+ "title":"Radio Energy",
+ "stream_path":"https://pub0302.101.ru:8443/stream/air/aac/64/99",
+ "kategori":"Rusya merkezli radyo."
+},
+{
+ "lang":"RU",
+ "title":"Radio Record",
+ "stream_path":"https://air2.radiorecord.ru:9003/rr_320",
+ "kategori":"Russiaan Music"
+},
+{
+ "lang":"TR",
+ "title":"Süper FM",
+ "stream_path":"https://17703.live.streamtheworld.com/SUPER_FM_SC?/;stream.mp3",
+ "kategori":"Türkçe Pop"
+},
+{
+ "lang":"TR",
+ "title":"Virgin Radio",
+ "stream_path":"https://pub0302.101.ru:8443/stream/air/aac/64/99",
+ "kategori":"Türkçe Pop "
+},
+{
+ "lang":"TR",
+ "title":"Alem FM",
+ "stream_path":"https://turkmedya.radyotvonline.net/alemfmaac?",
+ "kategori":"Türkçe Pop"
+}
+
+]
