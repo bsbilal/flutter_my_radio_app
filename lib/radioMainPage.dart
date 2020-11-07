@@ -14,6 +14,7 @@ class _radioMainState extends State<radioMain> {
 
   bool isPlaying=false;
   String playingStream="";
+  String playingStreamUrl="";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -101,7 +102,7 @@ child: _actionButtons(),
       color: Colors.redAccent,
       child: Column(
         children: <Widget>[
-          Container(margin: EdgeInsets.only(top: 10),child: Text("dfdsf",style: TextStyle(color: Colors.white),),),
+          Container(margin: EdgeInsets.only(top: 10),child: playingStream.isEmpty?Text(""):Text("$playingStream",style: TextStyle(color: Colors.white),),),
           Row(children: <Widget>[
             Expanded(
               child: playIcon(),
@@ -122,14 +123,19 @@ child: _actionButtons(),
 
     if (isPlaying)
       return GestureDetector(onTap:pausePressed ,child:Icon(Icons.pause,size: MediaQuery.of(context).size.height/10));
-    else
+    else if(playingStreamUrl.isEmpty)
       return GestureDetector(onTap:shufflePressed,child: Icon(Icons.shuffle,size: MediaQuery.of(context).size.height/10));
+    else
+      return GestureDetector(onTap:playPressed,child: Icon(Icons.play_arrow,size: MediaQuery.of(context).size.height/10));
+
+
   }
 
   Future<void> stationSelected(String _title,String _streamUrl) async {
     isPlaying=true;
     FlutterRadio.playOrPause(url: _streamUrl);
-    playingStream=_streamUrl;
+    playingStreamUrl=_streamUrl;
+    playingStream=_title;
     setState(() {
 
     });
@@ -158,6 +164,8 @@ child: _actionButtons(),
   }
   Future<void> stopPressed() {
     isPlaying = false;
+    playingStream="";
+    playingStreamUrl="";
     FlutterRadio.stop();
     setState(() {
 
@@ -166,7 +174,7 @@ child: _actionButtons(),
 
   Future<void> pausePressed() async {
     isPlaying = false;
-    await FlutterRadio.pause(url: playingStream);
+    await FlutterRadio.pause(url: playingStreamUrl);
     setState(() {
 
     });
@@ -174,4 +182,12 @@ child: _actionButtons(),
 
 
 
+
+  Future<void> playPressed() async {
+    isPlaying = true;
+    await FlutterRadio.play(url: playingStreamUrl);
+    setState(() {
+
+    });
+  }
 }
